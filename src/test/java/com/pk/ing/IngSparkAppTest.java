@@ -18,10 +18,9 @@ import java.util.Objects;
 import static com.pk.ing.utils.AppConsts.APP_PORT;
 import static com.pk.ing.utils.AppConsts.ATMS_CALCULATE_ORDER_URL;
 import static com.pk.ing.utils.AppConsts.EMPTY;
-import static com.pk.ing.utils.AppConsts.NEW_LINE;
 import static com.pk.ing.utils.AppConsts.ONLINEGAME_CALCULATE_URL;
-import static com.pk.ing.utils.AppConsts.SPACE;
 import static com.pk.ing.utils.AppConsts.TRANSACTIONS_REPORT_URL;
+import static com.pk.ing.utils.AppConsts.WHITE_SPACE_REGEX;
 import static org.apache.http.HttpHeaders.ACCEPT;
 import static org.apache.http.HttpHeaders.CONTENT_TYPE;
 import static org.apache.http.entity.ContentType.APPLICATION_JSON;
@@ -103,7 +102,6 @@ class IngSparkAppTest {
             throw new RuntimeException("couldn't read json: " + path);
         }
         return new String(resourceAsStream.readAllBytes())
-                .replace(SPACE, EMPTY)
-                .replace(NEW_LINE, EMPTY);
+                .replaceAll(WHITE_SPACE_REGEX, EMPTY);
     }
 }
