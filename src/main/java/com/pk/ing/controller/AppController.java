@@ -13,10 +13,10 @@ import spark.Spark;
 
 import java.util.List;
 
-import static com.pk.ing.utils.AppConsts.ATMS_CALCULATE_ORDER_URL;
-import static com.pk.ing.utils.AppConsts.ONLINEGAME_CALCULATE_URL;
-import static com.pk.ing.utils.AppConsts.PAGE_NOT_FOUND_MESSAGE;
-import static com.pk.ing.utils.AppConsts.TRANSACTIONS_REPORT_URL;
+import static com.pk.ing.utils.AppConst.ATMS_CALCULATE_ORDER_URL;
+import static com.pk.ing.utils.AppConst.ONLINEGAME_CALCULATE_URL;
+import static com.pk.ing.utils.AppConst.PAGE_NOT_FOUND_MESSAGE;
+import static com.pk.ing.utils.AppConst.TRANSACTIONS_REPORT_URL;
 import static com.pk.ing.utils.RequestDataMapper.arrayType;
 
 public class AppController {
@@ -31,14 +31,6 @@ public class AppController {
         this.onlineGameService = onlineGameService;
         this.transactionService = transactionService;
         this.mapper = mapper;
-    }
-
-    private static void initExceptionHandling() {
-        Spark.exception(Exception.class, (exception, request, response) -> {
-            response.status(500);
-            response.body(exception.getMessage());
-            log.error(exception.getMessage());
-        });
     }
 
     public void initEndpoints() {
@@ -69,4 +61,12 @@ public class AppController {
             return atmService.calculateAtmOrder(list);
         });
     }
+    private static void initExceptionHandling() {
+        Spark.exception(Exception.class, (exception, request, response) -> {
+            response.status(500);
+            response.body(exception.getMessage());
+            log.error(exception.getMessage());
+        });
+    }
+
 }

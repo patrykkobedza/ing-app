@@ -9,7 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import spark.Spark;
 
-import static com.pk.ing.utils.AppConsts.APP_PORT;
+import static com.pk.ing.utils.AppConst.APP_PORT;
 
 public class IngSparkApp {
 

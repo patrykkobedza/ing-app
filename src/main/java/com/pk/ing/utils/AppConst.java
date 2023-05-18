@@ -1,6 +1,6 @@
 package com.pk.ing.utils;
 
-public final class AppConsts {
+public final class AppConst {
 
     public static final int APP_PORT = 8080;
     public static final String ATMS_CALCULATE_ORDER_URL = "/atms/calculateOrder";
@@ -9,7 +9,7 @@ public final class AppConsts {
     public static final String PAGE_NOT_FOUND_MESSAGE = "Page not found.";
     public static final String EMPTY = "";
     public static final String WHITE_SPACE_REGEX = "\\s";
-    private AppConsts() {
+    private AppConst() {
     }
 
 

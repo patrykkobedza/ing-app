@@ -20,12 +20,12 @@ public class TransactionService {
             if (result.containsKey(creditAccount)) {
                 result.get(creditAccount).credit(amount);
             } else {
-                addNewAccountWithActionOnCreateToResult(creditAccount, result, (newAcc -> newAcc.credit(amount)));
+                addNewAccountToMapWithAction(creditAccount, result, (newAcc -> newAcc.credit(amount)));
             }
             if (result.containsKey(debitAccount)) {
                 result.get(debitAccount).debit(amount);
             } else {
-                addNewAccountWithActionOnCreateToResult(debitAccount, result, (newAcc -> newAcc.debit(amount)));
+                addNewAccountToMapWithAction(debitAccount, result, (newAcc -> newAcc.debit(amount)));
             }
         });
         return result.values()
@@ -34,10 +34,9 @@ public class TransactionService {
                 .toList();
     }
 
-    private void addNewAccountWithActionOnCreateToResult(String account, Map<String, AccountDto> resultMap, Consumer<AccountDto> accountDtoConsumer) {
-        AccountDto newAccount = new AccountDto(account);
+    private void addNewAccountToMapWithAction(String account, Map<String, AccountDto> resultMap, Consumer<AccountDto> accountDtoConsumer) {
+        final AccountDto newAccount = new AccountDto(account);
         accountDtoConsumer.accept(newAccount);
         resultMap.put(account, newAccount);
-
     }
 }

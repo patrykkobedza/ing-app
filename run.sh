@@ -1,1 +1,1 @@
-java -jar target/ing-app-spark-jar-with-dependencies.jar
+java -Xmx1024m -jar target/ing-app-spark-jar-with-dependencies.jar

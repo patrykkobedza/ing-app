@@ -15,12 +15,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
 
-import static com.pk.ing.utils.AppConsts.APP_PORT;
-import static com.pk.ing.utils.AppConsts.ATMS_CALCULATE_ORDER_URL;
-import static com.pk.ing.utils.AppConsts.EMPTY;
-import static com.pk.ing.utils.AppConsts.ONLINEGAME_CALCULATE_URL;
-import static com.pk.ing.utils.AppConsts.TRANSACTIONS_REPORT_URL;
-import static com.pk.ing.utils.AppConsts.WHITE_SPACE_REGEX;
+import static com.pk.ing.utils.AppConst.APP_PORT;
+import static com.pk.ing.utils.AppConst.ATMS_CALCULATE_ORDER_URL;
+import static com.pk.ing.utils.AppConst.EMPTY;
+import static com.pk.ing.utils.AppConst.ONLINEGAME_CALCULATE_URL;
+import static com.pk.ing.utils.AppConst.TRANSACTIONS_REPORT_URL;
+import static com.pk.ing.utils.AppConst.WHITE_SPACE_REGEX;
 import static org.apache.http.HttpHeaders.ACCEPT;
 import static org.apache.http.HttpHeaders.CONTENT_TYPE;
 import static org.apache.http.entity.ContentType.APPLICATION_JSON;
